@@ -1,0 +1,2 @@
+Replace client/player_state.lua with yours
+Add the cfg/item/required.lua things at the top or at the bottom of yours script
