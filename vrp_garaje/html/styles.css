@@ -1,0 +1,81 @@
+html {
+  overflow: hidden;
+}
+html,body{
+	margin: 0;
+  padding: 0;
+}
+@font-face {
+	font-family: 'fontcustom';
+	src: url(html/fontcustom.woff);
+}
+body{
+  filter: saturate(300%) brightness(110%);
+  font-family: 'fontcustom';
+}
+button {
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+  padding: 130px 130px;
+  background-color: rgba(0,0,0,0.75);
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  cursor: pointer;
+  color : white;
+  position: relative;
+  background-image: url("https://cdn.discordapp.com/attachments/555722654557143051/600310569517449226/loading.gif");
+  background-size: 110% 110%;
+  margin-top: 21.5%;
+  -webkit-border-radius:50%;
+  -moz-border-radius:50%;
+  -o-border-radius:50%;
+  transition: all 800ms ease-in-out;
+}
+button:hover {
+  -ms-transform: rotate(360deg); /* IE 9 */
+  -webkit-transform: rotate(360deg); /* Chrome, Safari, Opera */
+  transform: rotate(360deg);
+  border:1px white solid;
+  background-color: transparent;
+  background-image: none;
+  padding: 157px 157px;
+}
+
+.home{
+  display: none;
+}
+.op2{
+  display: none;
+}
+.op4{
+  display: none;
+}
+.op5{
+  display: none;
+}
+.op6{
+  display: none;
+}
+.op7{
+  display: none;
+}
+.op8{
+  display: none;
+}
+.op9{
+  display: none;
+}
+.op10{
+  display: none;
+}
+.op11{
+  display: none;
+}
+.op12{
+  display: none;
+}
+.op13{
+  display: none;
+}
