@@ -1,0 +1,40 @@
+html {
+  overflow: hidden;
+}
+html,body{
+	margin: 0;
+  padding: 0;
+}
+@font-face {
+	font-family: 'fontcustom';
+	src: url(fontcustom.woff);
+}
+body{
+  filter: saturate(300%) brightness(110%);
+  font-family: 'fontcustom';
+}
+button {
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+  font-family: 'fontcustom';
+  padding: 150px 80px;
+  background-color: rgba(0,0,0,0.75);
+  background-repeat: no-repeat;
+  background-position: center;
+  border-bottom: 5px solid green;
+  cursor: pointer;
+  color : white;
+  font-size:25px;
+  position: relative;
+  background-size: 80% 80%;
+  margin-top: 18%;
+  transition: padding 300ms linear;
+}
+button:hover {
+  padding: 177px 117px;
+}
+
+.home{
+  display: none;
+}
