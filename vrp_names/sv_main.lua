@@ -1,6 +1,5 @@
 local Tunnel = module("vrp", "lib/Tunnel")
 local Proxy = module("vrp", "lib/Proxy")
-MySQL = module("vrp_mysql", "MySQL")
 ALEXiconclient = Tunnel.getInterface("vrp_namesicon","vrp_namesicon")
 vRPclient = Tunnel.getInterface("vRP","vrp_namesicon")
 vRP = Proxy.getInterface("vRP")
@@ -28,25 +27,23 @@ grade = {
 }
 
 local function update_name(player, user_id, source)
-	MySQL.query("vRP/get_table", {id = tonumber(user_id)}, function(rows,affected)
-		vRP.getUserIdentity({user_id, function(identity)
-			group = "Civil"
-			local nume = GetPlayerName(player)
-			for i, v in pairs(factions) do
-				theGroup = tostring(v[1])
-				theName = tostring(v[2])
-				if(vRP.hasGroup({user_id, theGroup}))then
-					group = theName
-				end
+	vRP.getUserIdentity({user_id, function(identity)
+		group = "Civil"
+		local nume = GetPlayerName(player)
+		for i, v in pairs(factions) do
+			theGroup = tostring(v[1])
+			theName = tostring(v[2])
+			if(vRP.hasGroup({user_id, theGroup}))then
+				group = theName
 			end
-			for i, v in pairs(grade) do
-				if(vRP.hasGroup({user_id, v[1]}))then
-					group = v[1]
-				end
+		end
+		for i, v in pairs(grade) do
+			if(vRP.hasGroup({user_id, v[1]}))then
+				group = v[1]
 			end
-			ALEXiconclient.insertUser(player,{user_id,source,identity.firstname .. ' ' .. identity.name,group})
-		end})
-	end)
+		end
+		ALEXiconclient.insertUser(player,{user_id,source,identity.firstname .. ' ' .. identity.name,group})
+	end})
 end
 
 AddEventHandler("vRP:playerSpawn", function(user_id, source, first_spawn) 
